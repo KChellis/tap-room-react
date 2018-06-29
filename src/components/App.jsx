@@ -1,6 +1,7 @@
 
 import React from 'react';
 import KegList from './KegList';
+import AddEditKegForm from './AddEditKegForm';
 
 function App(){
   return (
@@ -18,8 +19,9 @@ function App(){
           `}
       </style>
       <h1>Welcome to the Tap Room!</h1>
-      <KegList/>
+      <KegList />
       <button className='btn btn-info .button'>Add Keg</button>
+      <AddEditKegForm />
     </div>
   );
 }

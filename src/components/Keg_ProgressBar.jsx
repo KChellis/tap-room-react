@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 function ProgressBar(props){
   var myStyle = {
     width: '100%'
-  }
+  };
 
   return(
     <div className='col-sm-3'>
