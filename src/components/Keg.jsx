@@ -20,7 +20,7 @@ function Keg(props){
         abv={props.abv}
         ibu={props.ibu}
         prices={props.prices}/>
-      <Buttons />
+      <Buttons pints={props.pints}/>
       <ProgressBar pints={props.pints}/>
     </div>
   );
