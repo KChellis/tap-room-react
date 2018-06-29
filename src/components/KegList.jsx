@@ -10,7 +10,8 @@ function KegList(){
       abv: 6.4,
       ibu: 45,
       prices: [5.00, 9.00, 18.00],
-      color: 'light'
+      color: 'light',
+      pints: 124
     },
     {
       name: 'Citrus Mistress',
@@ -19,7 +20,8 @@ function KegList(){
       abv: 6.3,
       ibu: 80,
       prices: [5.00, 9.00, 18.00],
-      color: 'light'
+      color: 'light',
+      pints: 124
     },
     {
       name: 'Black Butte Porter',
@@ -28,7 +30,8 @@ function KegList(){
       abv: 5.2,
       ibu: 30,
       prices: [5.00, 9.00, 18.00],
-      color: 'dark'
+      color: 'dark',
+      pints: 124
     },
     {
       name: 'Cucumber Crush',
@@ -37,7 +40,8 @@ function KegList(){
       abv: 5,
       ibu: 4,
       prices: [4.50, 8.50, 17.00],
-      color: 'light'
+      color: 'light',
+      pints: 124
     },
     {
       name: 'Pabst Blue Ribbon',
@@ -46,7 +50,8 @@ function KegList(){
       abv: 4.7,
       ibu: 10,
       prices: [3.00, 6.00, 12.00],
-      color: 'light'
+      color: 'light',
+      pints: 124
     },
     {
       name: 'Maid Marion',
@@ -55,7 +60,8 @@ function KegList(){
       abv: 6,
       ibu: 0,
       prices: [5.00, 9.00, 18.00],
-      color: 'cider'
+      color: 'cider',
+      pints: 124
     },
     {
       name: 'Willamette Valley Pinot Noir',
@@ -64,7 +70,8 @@ function KegList(){
       abv: 14,
       ibu: 0,
       prices: [6.00, 11.00, 22.00],
-      color: 'red wine'
+      color: 'red wine',
+      pints: 124
     }
   ]
   return(
@@ -83,6 +90,7 @@ function KegList(){
           ibu={keg.ibu}
           prices={keg.prices}
           color={keg.color}
+          pints={keg.pints}
           key={index} />
       )}
     </div>
