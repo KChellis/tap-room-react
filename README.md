@@ -11,6 +11,7 @@ Photo to be added
 
 ## Notes
 * spent several hours figuring out errors with react in atom. ended up having to uninstall and reinstall and create new project from scratch
+* still building components, but thinking about how to either style without bootstrap, or how to add bootstrap.
 
 ## Setup Requirements
 
