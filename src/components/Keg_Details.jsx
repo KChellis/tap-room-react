@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 function Details(props){
 
   return(
-    <div className='details'>
+    <div className='details col-sm-4'>
       <style jsx>{`
           .details {
 

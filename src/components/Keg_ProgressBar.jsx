@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 function ProgressBar(props){
 
   return(
-    <div className='buttons'>
+    <div className='buttons col-sm-4'>
       <style jsx>{`
           .buttons {
 

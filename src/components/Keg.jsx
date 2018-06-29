@@ -7,11 +7,30 @@ import PropTypes from 'prop-types';
 function Keg(props){
 
   return(
-    <div className='keg'>
+    <div className='keg row ${props.color}'>
       <style jsx>{`
-          .keg {
+        .keg {
+          border: 3px solid black;
+          margin: 3px;
+        }
+        .light {
+          background-color: #f4d177;
+        }
+        .medium {
+          background-color: #e58939;
+        }
 
-          }
+        .dark {
+          background-color: #723703;
+          color: white;
+        }
+        .cider {
+          background-color: #b4d68b;
+        }
+        .wine {
+          background-color: #89024f;
+        color: white;
+        }
        `}
       </style>
       <Details name ={props.name}
