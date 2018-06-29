@@ -11,18 +11,20 @@ function Details(props){
           }
        `}
       </style>
-      <h4>{props.name} by {props.brand}</h4>
+      <h4>{props.name} by {props.brewer}</h4>
       <p>{props.type}, ABV: {props.abv} IBU: {props.ibu}</p>
-      <p>Pint: {props.price[0]} Growler(32 oz): {props.price[1]} Growler(64 oz): {props.price[2]}</p>
+      <p>Pint: {props.prices[0]} Growler(32 oz): {props.prices[1]} Growler(64 oz): {props.prices[2]}</p>
     </div>
   );
-
-  Keg.propTypes = {
-    name: PropTypes.string.isRequired,
-    brewer: PropTypes.string.isRequired,
-    type: PropTypes.string.isRequired,
-    abv: PropTypes.number.isRequired,
-    ibu: PropTypes.number.isRequired,
-    prices: PropTypes.arrayOf(PropTypes.number).isRequired
-  };
 }
+
+Details.propTypes = {
+  name: PropTypes.string.isRequired,
+  brewer: PropTypes.string.isRequired,
+  type: PropTypes.string.isRequired,
+  abv: PropTypes.number.isRequired,
+  ibu: PropTypes.number.isRequired,
+  prices: PropTypes.arrayOf(PropTypes.number).isRequired
+};
+
+export default Details;

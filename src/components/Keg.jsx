@@ -24,15 +24,17 @@ function Keg(props){
       <ProgressBar pints={props.pints}/>
     </div>
   );
-
-  Keg.propTypes = {
-    name: PropTypes.string.isRequired,
-    brewer: PropTypes.string.isRequired,
-    type: PropTypes.string.isRequired,
-    abv: PropTypes.number.isRequired,
-    ibu: PropTypes.number.isRequired,
-    prices: PropTypes.arrayOf(PropTypes.number).isRequired,
-    color: PropTypes.string.isRequired,
-    pints: PropTypes.number.isRequired
-  };
 }
+
+Keg.propTypes = {
+  name: PropTypes.string.isRequired,
+  brewer: PropTypes.string.isRequired,
+  type: PropTypes.string.isRequired,
+  abv: PropTypes.number.isRequired,
+  ibu: PropTypes.number.isRequired,
+  prices: PropTypes.arrayOf(PropTypes.number).isRequired,
+  color: PropTypes.string.isRequired,
+  pints: PropTypes.number.isRequired
+};
+
+export default Keg;

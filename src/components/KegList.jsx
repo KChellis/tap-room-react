@@ -73,7 +73,7 @@ function KegList(){
       color: 'red wine',
       pints: 124
     }
-  ]
+  ];
   return(
     <div className='kegList'>
       <style jsx>{`
