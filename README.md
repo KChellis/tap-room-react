@@ -10,7 +10,7 @@ This is a recreation of an app that was originally built in Angular. This projec
 Photo to be added
 
 ## Notes
-
+* spent several hours figuring out errors with react in atom. ended up having to uninstall and reinstall and create new project from scratch
 
 ## Setup Requirements
 
