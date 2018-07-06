@@ -12,7 +12,8 @@ function KegList(props){
           }
        `}
       </style>
-      {props.kegList.map((keg) =>
+      {Object.keys(props.kegList).map((kegId) =>
+        let keg = props.kegList[kegId];
         <Keg name ={keg.name}
           brewer={keg.brewer}
           type={keg.type}
@@ -31,7 +32,7 @@ function KegList(props){
 
 KegList.propTypes = {
   userMode: PropTypes.string.isRequired,
-  kegList: PropTypes.array
+  kegList: PropTypes.object.isRequired
 };
 
 export default KegList;

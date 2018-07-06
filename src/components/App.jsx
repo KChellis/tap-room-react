@@ -11,8 +11,8 @@ class App extends React.Component{
       userMode:'user',
       showAddForm: false,
       selectedKeg: null,
-      masterKegList: [
-        {
+      masterKegList: {
+        '1': {
           name: 'Superfuzz',
           brewer: 'Elysian Brewing',
           type: 'Blood Orange Pale Ale',
@@ -24,7 +24,7 @@ class App extends React.Component{
           level: 'full',
           id: 1
         },
-        {
+        '2': {
           name: 'Citrus Mistress',
           brewer: 'Hop Valley Brewing',
           type: 'IPA',
@@ -36,7 +36,7 @@ class App extends React.Component{
           level: 'full',
           id: 2
         },
-        {
+        '3': {
           name: 'Black Butte Porter',
           brewer: 'Dechutes Brewing',
           type: 'Porter',
@@ -48,7 +48,7 @@ class App extends React.Component{
           level: 'full',
           id: 3
         },
-        {
+        '4': {
           name: 'Cucumber Crush',
           brewer: '10 Barrel Brewing',
           type: 'Sour',
@@ -60,7 +60,7 @@ class App extends React.Component{
           level: 'full',
           id: 4
         },
-        {
+        '5': {
           name: 'Pabst Blue Ribbon',
           brewer: 'Pabst Brewing',
           type: 'Piss',
@@ -72,7 +72,7 @@ class App extends React.Component{
           level: 'full',
           id: 5
         },
-        {
+        '6': {
           name: 'Maid Marion',
           brewer: '2 Towns Ciderhouse',
           type: 'Marionberry Cider',
@@ -84,7 +84,7 @@ class App extends React.Component{
           level: 'full',
           id: 6
         },
-        {
+        '7': {
           name: 'Willamette Valley Pinot Noir',
           brewer: 'Boedecker Cellars',
           type: 'Pinot Noir',
@@ -96,7 +96,7 @@ class App extends React.Component{
           level: 'full',
           id: 7
         }
-      ]
+      }
     };
     this.handleAddingNewKeg = this.handleAddingNewKeg.bind(this);
     this.handleToggleMode = this.handleToggleMode.bind(this);
@@ -104,10 +104,10 @@ class App extends React.Component{
   }
 
   handleAddingNewKeg(newKeg){
-    let newMasterKegList = this.state.masterKegList.slice();
     newKeg.pints = 124;
     newKeg.level = 'full';
-    newMasterKegList.push(newKeg);
+    let newMasterKegList = Object.assign({}, this.state.masterKegList, {
+    [newKeg.id]: newKeg});
     this.setState({masterKegList: newMasterKegList});
   }
 
