@@ -6,12 +6,12 @@ import BottomButtons from './BottomButtons';
 
 class App extends React.Component{
   constructor(props){
-    super(props)
+    super(props);
     this.state ={
-      userMode = 'user';
-      showAddForm = false;
-      selectedKeg = null;
-      masterKegList = [
+      userMode:'user',
+      showAddForm: false,
+      selectedKeg: null,
+      masterKegList: [
         {
           name: 'Superfuzz',
           brewer: 'Elysian Brewing',
@@ -21,7 +21,8 @@ class App extends React.Component{
           prices: [5.00, 9.00, 18.00],
           color: 'light',
           pints: 124,
-          level: 'full'
+          level: 'full',
+          id: 1
         },
         {
           name: 'Citrus Mistress',
@@ -32,7 +33,8 @@ class App extends React.Component{
           prices: [5.00, 9.00, 18.00],
           color: 'light',
           pints: 124,
-          level: 'full'
+          level: 'full',
+          id: 2
         },
         {
           name: 'Black Butte Porter',
@@ -43,7 +45,8 @@ class App extends React.Component{
           prices: [5.00, 9.00, 18.00],
           color: 'dark',
           pints: 124,
-          level: 'full'
+          level: 'full',
+          id: 3
         },
         {
           name: 'Cucumber Crush',
@@ -54,7 +57,8 @@ class App extends React.Component{
           prices: [4.50, 8.50, 17.00],
           color: 'light',
           pints: 124,
-          level: 'full'
+          level: 'full',
+          id: 4
         },
         {
           name: 'Pabst Blue Ribbon',
@@ -65,7 +69,8 @@ class App extends React.Component{
           prices: [3.00, 6.00, 12.00],
           color: 'light',
           pints: 124,
-          level: 'full'
+          level: 'full',
+          id: 5
         },
         {
           name: 'Maid Marion',
@@ -76,7 +81,8 @@ class App extends React.Component{
           prices: [5.00, 9.00, 18.00],
           color: 'cider',
           pints: 124,
-          level: 'full'
+          level: 'full',
+          id: 6
         },
         {
           name: 'Willamette Valley Pinot Noir',
@@ -87,11 +93,39 @@ class App extends React.Component{
           prices: [6.00, 11.00, 22.00],
           color: 'red wine',
           pints: 124,
-          level: 'full'
+          level: 'full',
+          id: 7
         }
       ]
+    };
+    this.handleAddingNewKeg = this.handleAddingNewKeg.bind(this);
+    this.handleToggleMode = this.handleToggleMode.bind(this);
+    this.handleToggleForm = this.handleToggleForm.bind(this);
+  }
+
+  handleAddingNewKeg(newKeg){
+    let newMasterKegList = this.state.masterKegList.slice();
+    newMasterKegList.push(newKeg);
+    this.setState({masterKegList: newMasterKegList});
+  }
+
+  handleToggleMode(){
+    if(this.state.userMode === 'user'){
+      this.setState({userMode: 'admin'});
+    } else {
+      this.setState({userMode: 'user'});
     }
   }
+
+  handleToggleForm(){
+    if(this.state.showAddForm){
+      this.setState({showAddForm: false});
+    } else {
+      this.setState({showAddForm: true});
+    }
+
+  }
+
   render() {
 
     return (
@@ -107,13 +141,13 @@ class App extends React.Component{
               background-image: url("https://www.transparenttextures.com/patterns/bright-squares.png");
             }
             `}
-          </style>
-          <h1>Welcome to the Tap Room!</h1>
-          <KegList />
-          <button className='btn btn-info .button'>Add Keg</button>
-          <NewKegControl />
-        </div>
-      );
+        </style>
+        <h1>Welcome to the Tap Room!</h1>
+        <KegList userMode= {this.state.userMode} kegList={this.state.masterKegList}/>
+        <BottomButtons onToggleMode={this.handleToggleMode} onToggleForm={this.handleToggleForm} userMode={this.state.userMode}/>
+        <NewKegControl onNewKegCreation={this.handleAddingNewKeg}/>
+      </div>
+    );
   }
 }
 

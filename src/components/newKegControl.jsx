@@ -11,4 +11,4 @@ class NewKegControl extends React.Component {
   }
 }
 
-export default NewTicketControl;
+export default NewKegControl;

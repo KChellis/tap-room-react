@@ -2,12 +2,12 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 function BottomButtons(props){
-  let buttons;
-  if(props.mode ==='admin'){
-    buttons = <button onClick= {props.onAddKeg}>Add Keg</button>
-    <button>User mode</button>;
+  let buttons = null;
+  if(props.userMode ==='admin'){
+    buttons = <div><button onClick= {props.onToggleForm}>Add Keg</button>
+    <button onClick={props.onToggleMode()}>User mode</button></div>;
   } else {
-    buttons = <button>Admin mode</button>;
+    buttons = <button onClick={props.onToggleMode()}>Admin mode</button>;
   }
   return(
     <div className='buttons col-sm-4'>
@@ -25,10 +25,10 @@ function BottomButtons(props){
   );
 }
 
-Buttons.propTypes = {
-  mode: PropTypes.string,
-  onAddKeg: PropTypes.func,
-  onModeChange: PropTypes.func
+BottomButtons.propTypes = {
+  userMode: PropTypes.string,
+  onToggleForm: PropTypes.func,
+  onToggleMode: PropTypes.func
 };
 
 export default BottomButtons;
