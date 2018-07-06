@@ -18,7 +18,7 @@ function AddEditKegForm(props){
       <form onSubmit={handleNewKegFormSubmission}>
 
         <label>Name</label>
-        <input type='text' id='name' value={props.selectedKeg.name} ref={(input) => {_name = input;}}/><br/>
+        <input type='text' id='name' placeholder='Enter name here' ref={(input) => {_name = input;}}/><br/>
         <label>Brewer</label>
         <input type='text' id='brewer' placeholder='Enter brewer here' ref={(input) => {_brewer = input;}}/><br/>
         <label>Type</label>
