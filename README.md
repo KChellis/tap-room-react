@@ -7,7 +7,7 @@
 This is a recreation of an app that was originally built in Angular. This project instead uses React to build the same site that allows a user to see what kegs are available and admins to CRUD kegs.
 
 ## Component Structure
-Photo to be added
+![Component Structure](/src/assets/images/chart.jpg)
 
 ## Notes
 * spent several hours figuring out errors with react in atom. ended up having to uninstall and reinstall and create new project from scratch
