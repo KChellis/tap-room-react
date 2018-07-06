@@ -1,7 +1,7 @@
 
 import React from 'react';
 import KegList from './KegList';
-import NewKegControl from './NewKegControl';
+import AddEditKegForm from './AddEditKegForm';
 import BottomButtons from './BottomButtons';
 
 class App extends React.Component{
@@ -110,19 +110,23 @@ class App extends React.Component{
   }
 
   handleToggleMode(){
+    console.log(this.state.userMode);
     if(this.state.userMode === 'user'){
       this.setState({userMode: 'admin'});
     } else {
       this.setState({userMode: 'user'});
     }
+    console.log(this.state.userMode);
   }
 
   handleToggleForm(){
+    console.log(this.state.showAddForm);
     if(this.state.showAddForm){
       this.setState({showAddForm: false});
     } else {
       this.setState({showAddForm: true});
     }
+    console.log(this.state.showAddForm);
 
   }
 
@@ -145,7 +149,7 @@ class App extends React.Component{
         <h1>Welcome to the Tap Room!</h1>
         <KegList userMode= {this.state.userMode} kegList={this.state.masterKegList}/>
         <BottomButtons onToggleMode={this.handleToggleMode} onToggleForm={this.handleToggleForm} userMode={this.state.userMode}/>
-        <NewKegControl onNewKegCreation={this.handleAddingNewKeg}/>
+        <AddEditKegForm onNewKegCreation={this.handleAddingNewKeg} showAddForm={this.state.showAddForm} onToggleForm={this.handleToggleForm}/>
       </div>
     );
   }

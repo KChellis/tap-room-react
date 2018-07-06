@@ -4,8 +4,8 @@ import PropTypes from 'prop-types';
 function BottomButtons(props){
   let buttons = null;
   if(props.userMode ==='admin'){
-    buttons = <div><button onClick= {props.onToggleForm}>Add Keg</button>
-    <button onClick={props.onToggleMode()}>User mode</button></div>;
+    buttons = <div><button onClick= {props.onToggleForm()}>Add Keg</button>
+      <button onClick={props.onToggleMode()}>User mode</button></div>;
   } else {
     buttons = <button onClick={props.onToggleMode()}>Admin mode</button>;
   }
@@ -20,7 +20,7 @@ function BottomButtons(props){
           }
           `}
       </style>
-     {buttons}
+      {buttons}
     </div>
   );
 }

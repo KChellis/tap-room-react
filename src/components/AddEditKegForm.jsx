@@ -1,9 +1,10 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
-function AddEditKegForm(){
-
-  return(
-    <div>
+function AddEditKegForm(props){
+  let currentContent= null;
+  if(props.showAddForm){
+    currentContent = <div>
       <label>Name</label>
       <input type='text' placeholder="Enter name here"/><br/>
       <label>Brand</label>
@@ -27,9 +28,19 @@ function AddEditKegForm(){
       <input type="radio" value="cider"/>Cider<br/>
       <input type="radio" value="wine"/>Wine<br/>
       <button className="btn btn-info">Done</button>
-    </div>
+    </div>;
+  }
+  return(
+    {currentContent}
   );
 }
+
+AddEditKegForm.propTypes = {
+  showAddForm: PropTypes.bool.isRequired,
+  selectedKeg: PropTypes.object,
+  onNewKegCreation: PropTypes.func,
+  onToggleForm: PropTypes.func
+};
 
 
 export default AddEditKegForm;
