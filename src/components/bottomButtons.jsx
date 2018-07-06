@@ -2,13 +2,13 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 function BottomButtons(props){
-  let buttons = null;
-  if(props.userMode ==='admin'){
-    buttons = <div><button onClick= {props.onToggleForm()}>Add Keg</button>
-      <button onClick={props.onToggleMode()}>User mode</button></div>;
-  } else {
-    buttons = <button onClick={props.onToggleMode()}>Admin mode</button>;
-  }
+  // let buttons = null;
+  // if(props.userMode ==='admin'){
+  //   buttons = <div><button onClick= {props.onToggleForm()}>Add Keg</button>
+  //     <button onClick={props.onToggleMode()}>User mode</button></div>;
+  // } else {
+  //   buttons = <button onClick={props.onToggleMode()}>Admin mode</button>;
+  // }
   return(
     <div className='buttons col-sm-4'>
       <style jsx>
@@ -20,7 +20,6 @@ function BottomButtons(props){
           }
           `}
       </style>
-      {buttons}
     </div>
   );
 }

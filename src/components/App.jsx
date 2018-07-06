@@ -120,14 +120,11 @@ class App extends React.Component{
   }
 
   handleToggleForm(){
-    console.log(this.state.showAddForm);
     if(this.state.showAddForm){
       this.setState({showAddForm: false});
     } else {
       this.setState({showAddForm: true});
     }
-    console.log(this.state.showAddForm);
-
   }
 
   render() {
@@ -149,6 +146,7 @@ class App extends React.Component{
         <h1>Welcome to the Tap Room!</h1>
         <KegList userMode= {this.state.userMode} kegList={this.state.masterKegList}/>
         <BottomButtons onToggleMode={this.handleToggleMode} onToggleForm={this.handleToggleForm} userMode={this.state.userMode}/>
+        <button onClick={this.handleToggleForm}>Add Keg</button>
         <AddEditKegForm onNewKegCreation={this.handleAddingNewKeg} showAddForm={this.state.showAddForm} onToggleForm={this.handleToggleForm}/>
       </div>
     );
