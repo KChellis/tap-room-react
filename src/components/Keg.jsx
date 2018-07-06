@@ -40,7 +40,10 @@ function Keg(props){
         ibu={props.ibu}
         prices={props.prices}/>
       <Buttons pints={props.pints}
-        userMode={props.userMode}/>
+        userMode={props.userMode}
+        kegId={props.kegId}
+        onSetSelectedKegId={props.onSetSelectedKegId}
+        onToggleForm={props.onToggleForm}/>
       <ProgressBar pints={props.pints}
         level={props.level}/>
     </div>
@@ -57,7 +60,10 @@ Keg.propTypes = {
   color: PropTypes.string.isRequired,
   pints: PropTypes.number.isRequired,
   level: PropTypes.string.isRequired,
-  userMode: PropTypes.string.isRequired
+  userMode: PropTypes.string.isRequired,
+  kegId: PropTypes.string.isRequired,
+  onSetSelectedKegId: PropTypes.func.isRequired,
+  onToggleForm: PropTypes.func.isRequired
 };
 
 export default Keg;

@@ -10,7 +10,7 @@ class App extends React.Component{
     this.state ={
       userMode:'user',
       showAddForm: false,
-      selectedKeg: null,
+      selectedKegId: null,
       masterKegList: {
         '1': {
           name: 'Superfuzz',
@@ -21,8 +21,7 @@ class App extends React.Component{
           prices: [5.00, 9.00, 18.00],
           color: 'light',
           pints: 124,
-          level: 'full',
-          id: 1
+          level: 'full'
         },
         '2': {
           name: 'Citrus Mistress',
@@ -33,8 +32,7 @@ class App extends React.Component{
           prices: [5.00, 9.00, 18.00],
           color: 'light',
           pints: 124,
-          level: 'full',
-          id: 2
+          level: 'full'
         },
         '3': {
           name: 'Black Butte Porter',
@@ -45,8 +43,7 @@ class App extends React.Component{
           prices: [5.00, 9.00, 18.00],
           color: 'dark',
           pints: 124,
-          level: 'full',
-          id: 3
+          level: 'full'
         },
         '4': {
           name: 'Cucumber Crush',
@@ -57,8 +54,7 @@ class App extends React.Component{
           prices: [4.50, 8.50, 17.00],
           color: 'light',
           pints: 124,
-          level: 'full',
-          id: 4
+          level: 'full'
         },
         '5': {
           name: 'Pabst Blue Ribbon',
@@ -69,8 +65,7 @@ class App extends React.Component{
           prices: [3.00, 6.00, 12.00],
           color: 'light',
           pints: 124,
-          level: 'full',
-          id: 5
+          level: 'full'
         },
         '6': {
           name: 'Maid Marion',
@@ -81,8 +76,7 @@ class App extends React.Component{
           prices: [5.00, 9.00, 18.00],
           color: 'cider',
           pints: 124,
-          level: 'full',
-          id: 6
+          level: 'full'
         },
         '7': {
           name: 'Willamette Valley Pinot Noir',
@@ -93,21 +87,21 @@ class App extends React.Component{
           prices: [6.00, 11.00, 22.00],
           color: 'red wine',
           pints: 124,
-          level: 'full',
-          id: 7
+          level: 'full'
         }
       }
     };
     this.handleAddingNewKeg = this.handleAddingNewKeg.bind(this);
     this.handleToggleMode = this.handleToggleMode.bind(this);
     this.handleToggleForm = this.handleToggleForm.bind(this);
+    this.handleSetSelectedKegId = this.handleSetSelectedKegId.bind(this);
   }
 
   handleAddingNewKeg(newKeg){
     newKeg.pints = 124;
     newKeg.level = 'full';
     let newMasterKegList = Object.assign({}, this.state.masterKegList, {
-    [newKeg.id]: newKeg});
+      [newKeg.id]: newKeg});
     this.setState({masterKegList: newMasterKegList});
   }
 
@@ -127,6 +121,10 @@ class App extends React.Component{
     }
   }
 
+  handleSetSelectedKegId(kegId) {
+    this.setState({selectedKegId: kegId});
+  }
+
   render() {
 
     return (
@@ -144,9 +142,12 @@ class App extends React.Component{
             `}
         </style>
         <h1>Welcome to the Tap Room!</h1>
-        <KegList userMode= {this.state.userMode} kegList={this.state.masterKegList}/>
+        <KegList userMode= {this.state.userMode} kegList={this.state.masterKegList}
+        onSetSelectedKegId={this.handleSetSelectedKegId}
+        onToggleForm={this.handleToggleForm}/>
         <BottomButtons onToggleMode={this.handleToggleMode} onToggleForm={this.handleToggleForm} userMode={this.state.userMode}/>
-        <AddEditKegForm onNewKegCreation={this.handleAddingNewKeg} showAddForm={this.state.showAddForm} onToggleForm={this.handleToggleForm}/>
+        <AddEditKegForm onNewKegCreation={this.handleAddingNewKeg} showAddForm={this.state.showAddForm} onToggleForm={this.handleToggleForm}
+        selectedKeg={this.state.masterKegList[this.state.selectedKegId]}/>
       </div>
     );
   }

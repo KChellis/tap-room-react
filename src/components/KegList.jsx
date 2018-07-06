@@ -12,9 +12,9 @@ function KegList(props){
           }
        `}
       </style>
-      {Object.keys(props.kegList).map((kegId) =>
+      {Object.keys(props.kegList).map(function(kegId) {
         let keg = props.kegList[kegId];
-        <Keg name ={keg.name}
+        return <Keg name ={keg.name}
           brewer={keg.brewer}
           type={keg.type}
           abv={keg.abv}
@@ -23,16 +23,21 @@ function KegList(props){
           color={keg.color}
           pints={keg.pints}
           level={keg.level}
+          kegId={kegId}
+          key={kegId}
           userMode={props.userMode}
-          key={keg.id} />
-      )}
+          onSetSelectedKegId={props.onSetSelectedKegId}
+          onToggleForm={props.onToggleForm} />;
+      })}
     </div>
   );
 }
 
 KegList.propTypes = {
   userMode: PropTypes.string.isRequired,
-  kegList: PropTypes.object.isRequired
+  kegList: PropTypes.object.isRequired,
+  onSetSelectedKegId: PropTypes.func.isRequired,
+  onToggleForm: PropTypes.func.isRequired
 };
 
 export default KegList;

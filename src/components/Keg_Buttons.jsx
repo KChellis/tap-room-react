@@ -2,6 +2,10 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 function Buttons(props){
+  function handleEditClick(){
+    props.onSetSelectedKegId(props.kegId);
+    props.onToggleForm();
+  }
   if(props.userMode === 'user'){
     return(
       <div className='col-sm-4'></div>
@@ -18,7 +22,7 @@ function Buttons(props){
             }
             `}
           </style>
-          <button className='btn btn-info'>Edit</button>
+          <button onClick={handleEditClick} className='btn btn-info'>Edit</button>
           <button className='btn btn-info'>Delete</button>
           <br/>
           <button className='btn btn-info'>Pint</button>
@@ -31,8 +35,11 @@ function Buttons(props){
 }
 
 Buttons.propTypes = {
+  kegId: PropTypes.string.isRequired,
   pints: PropTypes.number.isRequired,
-  userMode: PropTypes.string.isRequired
+  userMode: PropTypes.string.isRequired,
+  onSetSelectedKegId: PropTypes.func.isRequired,
+  onToggleForm: PropTypes.func.isRequired
 };
 
 export default Buttons;
