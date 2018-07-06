@@ -46,7 +46,8 @@ function AddEditKegForm(props){
 
   function handleNewKegFormSubmission(event){
     event.preventDefault;
-    props.onNewKegCreation({name: _name.value, brewer: _brewer.value, type: _type.value, abv: parseInt(_abv.value), ibu: parseInt(_ibu.value), prices: [parseInt(_pintprice.value), parseInt(_growler32price.vlaue), parseInt(_growler64price.value)], color: _color.value, pints: 124, level: 'full' id: v4()});
+    props.onNewKegCreation({name: _name.value, brewer: _brewer.value, type: _type.value, abv: parseInt(_abv.value), ibu: parseInt(_ibu.value), prices: [parseInt(_pintprice.value), parseInt(_growler32price.vlaue), parseInt(_growler64price.value)], color: _color.value, id: v4()});
+    props.onToggleForm();
   }
   return(
     <div>

@@ -13,6 +13,7 @@ This is a recreation of an app that was originally built in Angular. This projec
 * spent several hours figuring out errors with react in atom. ended up having to uninstall and reinstall and create new project from scratch
 * still building components, but thinking about how to either style without bootstrap, or how to add bootstrap.
 * realized I don't actually need the NewKegControl component
+* radio buttons for color are not working properly. I will need to research that, but want to get the rest of the page working first
 
 ## Setup Requirements
 

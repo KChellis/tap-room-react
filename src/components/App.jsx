@@ -105,6 +105,8 @@ class App extends React.Component{
 
   handleAddingNewKeg(newKeg){
     let newMasterKegList = this.state.masterKegList.slice();
+    newKeg.pints = 124;
+    newKeg.level = 'full';
     newMasterKegList.push(newKeg);
     this.setState({masterKegList: newMasterKegList});
   }
