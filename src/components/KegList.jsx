@@ -22,6 +22,7 @@ function KegList(props){
           color={keg.color}
           pints={keg.pints}
           level={keg.level}
+          userMode={props.userMode}
           key={keg.id} />
       )}
     </div>

@@ -112,13 +112,11 @@ class App extends React.Component{
   }
 
   handleToggleMode(){
-    console.log(this.state.userMode);
     if(this.state.userMode === 'user'){
       this.setState({userMode: 'admin'});
     } else {
-      this.setState({userMode: 'user'});
+      this.setState({userMode: 'user', showAddForm: false});
     }
-    console.log(this.state.userMode);
   }
 
   handleToggleForm(){
@@ -148,7 +146,6 @@ class App extends React.Component{
         <h1>Welcome to the Tap Room!</h1>
         <KegList userMode= {this.state.userMode} kegList={this.state.masterKegList}/>
         <BottomButtons onToggleMode={this.handleToggleMode} onToggleForm={this.handleToggleForm} userMode={this.state.userMode}/>
-        <button onClick={this.handleToggleForm}>Add Keg</button>
         <AddEditKegForm onNewKegCreation={this.handleAddingNewKeg} showAddForm={this.state.showAddForm} onToggleForm={this.handleToggleForm}/>
       </div>
     );
