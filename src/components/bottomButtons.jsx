@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 function BottomButtons(props){
   let buttons;
-  if(props.path ==='admin'){
+  if(props.mode ==='admin'){
     buttons = <button onClick= {props.onAddKeg}>Add Keg</button>
     <button>User mode</button>;
   } else {
@@ -26,8 +26,9 @@ function BottomButtons(props){
 }
 
 Buttons.propTypes = {
-  path: PropTypes.string,
-  onAddKeg: PropTypes.func
+  mode: PropTypes.string,
+  onAddKeg: PropTypes.func,
+  onModeChange: PropTypes.func
 };
 
 export default BottomButtons;
