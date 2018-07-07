@@ -143,11 +143,11 @@ class App extends React.Component{
         </style>
         <h1>Welcome to the Tap Room!</h1>
         <KegList userMode= {this.state.userMode} kegList={this.state.masterKegList}
-        onSetSelectedKegId={this.handleSetSelectedKegId}
-        onToggleForm={this.handleToggleForm}/>
+          onSetSelectedKegId={this.handleSetSelectedKegId}
+          onToggleForm={this.handleToggleForm}/>
         <BottomButtons onToggleMode={this.handleToggleMode} onToggleForm={this.handleToggleForm} userMode={this.state.userMode}/>
         <AddEditKegForm onNewKegCreation={this.handleAddingNewKeg} showAddForm={this.state.showAddForm} onToggleForm={this.handleToggleForm}
-        selectedKeg={this.state.masterKegList[this.state.selectedKegId]}/>
+          selectedKeg={this.state.masterKegList[this.state.selectedKegId]}/>
       </div>
     );
   }

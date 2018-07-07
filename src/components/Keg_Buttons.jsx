@@ -9,7 +9,7 @@ function Buttons(props){
   if(props.userMode === 'user'){
     return(
       <div className='col-sm-4'></div>
-    )
+    );
   }else{
     return(
       <div className='buttons col-sm-4'>
@@ -21,16 +21,16 @@ function Buttons(props){
               background-color: #a5a4a5;
             }
             `}
-          </style>
-          <button onClick={handleEditClick} className='btn btn-info'>Edit</button>
-          <button className='btn btn-info'>Delete</button>
-          <br/>
-          <button className='btn btn-info'>Pint</button>
-          <button className='btn btn-info'>Growler(32 oz)</button>
-          <button className='btn btn-info'>Growler(64 oz)</button>
-          <button className="btn btn-info">Replace Keg</button>
-        </div>
-      );
+        </style>
+        <button onClick={handleEditClick} className='btn btn-info'>Edit</button>
+        <button className='btn btn-info'>Delete</button>
+        <br/>
+        <button className='btn btn-info'>Pint</button>
+        <button className='btn btn-info'>Growler(32 oz)</button>
+        <button className='btn btn-info'>Growler(64 oz)</button>
+        <button className="btn btn-info">Replace Keg</button>
+      </div>
+    );
   }
 }
 

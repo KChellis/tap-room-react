@@ -13,9 +13,11 @@ function Keg(props){
           border: 3px solid black;
           margin: 3px;
         }
+
         .light {
           background-color: #f4d177;
         }
+
         .medium {
           background-color: #e58939;
         }
@@ -24,9 +26,11 @@ function Keg(props){
           background-color: #723703;
           color: white;
         }
+
         .cider {
           background-color: #b4d68b;
         }
+        
         .wine {
           background-color: #89024f;
         color: white;
